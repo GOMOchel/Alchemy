@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlchemyAlpha0.1", "AlchemyAlpha0.1\AlchemyAlpha0.1.csproj", "{A48FDE07-FC06-4F71-B373-147D76DD5D15}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Alchemy Installer", "Alchemy Installer\Alchemy Installer.vdproj", "{94FEAC16-1915-41D0-B334-E071632DEBA5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A48FDE07-FC06-4F71-B373-147D76DD5D15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A48FDE07-FC06-4F71-B373-147D76DD5D15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A48FDE07-FC06-4F71-B373-147D76DD5D15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A48FDE07-FC06-4F71-B373-147D76DD5D15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94FEAC16-1915-41D0-B334-E071632DEBA5}.Debug|Any CPU.ActiveCfg = Debug
+		{94FEAC16-1915-41D0-B334-E071632DEBA5}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3FF3AF28-CC22-4064-B285-B20CFD46F16C}
+	EndGlobalSection
+EndGlobal

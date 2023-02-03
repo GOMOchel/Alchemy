@@ -28,28 +28,28 @@ namespace AlchemyAlpha0._1
         private void MainWindow_Load(object sender, EventArgs e)
         {
             this.BackgroundImage = Properties.Resources.fon_1;
-            if (DataBank.sound_volume == true)
+            if (DataBank.get_sound_volume() == true)
             {
                 SoundPlayer sound = new SoundPlayer(Properties.Resources.house);
                 sound.PlayLooping();
             }
             Inventory_Panel.Visible = false;
             Recipes_Panel.Visible = false;
-            Money_label.Text = "Гроші: " + DataBank.money + "$";
-            Hydrogen_label.Text = "Водород: " + DataBank.hydrogen;
-            Sulfur_label.Text = "Кристал Вілідора: " + DataBank.sulfur;
-            Chlorine_label.Text = "Вода Шанті: " + DataBank.Chlorine;
-            Boron_label.Text = "Злиток Альтеіда: " + DataBank.Boron;
-            Helium_label.Text = "Дихання Мілмулніра: " + DataBank.Helium;
-            Nitrogen_label.Text = "Слина Сприггана: " + DataBank.Nitrogen;
-            Hydrogen_Sulfide_label.Text = "Смрад Аарду: " + DataBank.Hydrogen_Sulfide;
-            hel_hel_hel_label.Text = "Корунда: " + DataBank.Carbon;
-            helium_hydrogen_label.Text = "Ектоплазма: " + DataBank.Hydrogen_Sulfide;
-            carbid_bora_label.Text = "Мрачний Кристал: " + DataBank.carbid_bora;
-            oksid_azota_label.Text = "Сіль Порожнечі: " + DataBank.nitrogen_boron;
-            dioksid_hlora_label.Text = "Пахощі: " + DataBank.oksid_azota;
-            trihlorid_azota_label.Text = "Вовча Загибель: " + DataBank.dioksid_hlora;
-            nitrogen_boron_label.Text = "Сторічне Добриво: " + DataBank.trihlorid_azota;
+            Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+            Hydrogen_label.Text = "Водород: " + DataBank.get_hydrogen();
+            Sulfur_label.Text = "Кристал Вілідора: " + DataBank.get_sulfur();
+            Chlorine_label.Text = "Вода Шанті: " + DataBank.get_chlorine();
+            Boron_label.Text = "Злиток Альтеіда: " + DataBank.get_boron();
+            Helium_label.Text = "Дихання Мілмулніра: " + DataBank.get_helium();
+            Nitrogen_label.Text = "Слина Сприггана: " + DataBank.get_nitrogen();
+            Hydrogen_Sulfide_label.Text = "Смрад Аарду: " + DataBank.get_hydrogen_sulfide();
+            hel_hel_hel_label.Text = "Корунда: " + DataBank.get_carbon();
+            helium_hydrogen_label.Text = "Ектоплазма: " + DataBank.get_helium_hydrogen();
+            carbid_bora_label.Text = "Мрачний Кристал: " + DataBank.get_carbid_bora();
+            oksid_azota_label.Text = "Сіль Порожнечі: " + DataBank.get_nitrogen_boron();
+            dioksid_hlora_label.Text = "Пахощі: " + DataBank.get_oksid_azota();
+            trihlorid_azota_label.Text = "Вовча Загибель: " + DataBank.get_dioksid_hlora();
+            nitrogen_boron_label.Text = "Сторічне Добриво: " + DataBank.get_trihlorid_azota();
         }
 
         private void Shop_button_Click(object sender, EventArgs e)
@@ -110,14 +110,14 @@ namespace AlchemyAlpha0._1
                 textBox1.Visible = true;
                 textBox1.Text = "Доброго дня алхімік, мені потрібен яд Вовча Загибель, не задавай зайвих запитань і я доплачу за працю";
                 void sale_Click(object sender, EventArgs e){
-                    if (DataBank.dioksid_hlora >= 1)
+                    if (DataBank.get_dioksid_hlora() >= 1)
                     {
-                        DataBank.dioksid_hlora = DataBank.dioksid_hlora - 1;
-                        trihlorid_azota_label.Text = "Вовча Загибель: " + DataBank.dioksid_hlora;
-                        DataBank.money = DataBank.money + 50;
-                        Money_label.Text = "Гроші: " + DataBank.money + "$";
-                        DataBank.order = DataBank.order + 1;
-                        label2.Text = "Замовлення:" + DataBank.order;
+                        DataBank.set_dioksid_hlora(DataBank.get_dioksid_hlora() - 1);
+                        trihlorid_azota_label.Text = "Вовча Загибель: " + DataBank.get_dioksid_hlora();
+                        DataBank.set_money(DataBank.get_money() + 50);
+                        Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                        DataBank.set_order(DataBank.get_order() + 1);
+                        label2.Text = "Замовлення:" + DataBank.get_order();
 
                         Random rnd = new Random();
                         int c = rnd.Next(a, b);
@@ -135,14 +135,14 @@ namespace AlchemyAlpha0._1
                 panel1.BackgroundImage = Properties.Resources._2;
                 textBox1.Visible = true;
                 textBox1.Text = "Потрібна ектоплазма для добрива, у невеликих кульках";
-                if (DataBank.Hydrogen_Sulfide >= 1)
+                if (DataBank.get_hydrogen_sulfide() >= 1)
                 {
-                    DataBank.Hydrogen_Sulfide = DataBank.Hydrogen_Sulfide - 1;
-                    helium_hydrogen_label.Text = "Ектоплазма: " + DataBank.Hydrogen_Sulfide;
-                    DataBank.money = DataBank.money + 60;
-                    Money_label.Text = "Гроші: " + DataBank.money + "$";
-                    DataBank.order = DataBank.order + 1;
-                    label2.Text = "Замовлення:" + DataBank.order;
+                    DataBank.set_hydrogen_sulfide(DataBank.get_hydrogen_sulfide() - 1);
+                    helium_hydrogen_label.Text = "Ектоплазма: " + DataBank.get_hydrogen_sulfide();
+                    DataBank.set_money(DataBank.get_money() + 60);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_order(DataBank.get_order() +1);
+                    label2.Text = "Замовлення:" + DataBank.get_order();
 
                 }
                 else
@@ -157,14 +157,14 @@ namespace AlchemyAlpha0._1
                 panel1.BackgroundImage = Properties.Resources._3;
                 textBox1.Visible = true;
                 textBox1.Text = "Усього доброго, міський алхімік, для нашої церкви потрібні нові пахощі. Церковна парафія буде тобі вдячна";
-                if (DataBank.oksid_azota >= 1)
+                if (DataBank.get_oksid_azota() >= 1)
                 {
-                    DataBank.oksid_azota = DataBank.oksid_azota - 1;
-                    dioksid_hlora_label.Text = "Пахощі: " + DataBank.oksid_azota;
-                    DataBank.money = DataBank.money + 70;
-                    Money_label.Text = "Гроші: " + DataBank.money + "$";
-                    DataBank.order = DataBank.order + 1;
-                    label2.Text = "Замовлення:" + DataBank.order;
+                    DataBank.set_oksid_azota(DataBank.get_oksid_azota() -1);
+                    dioksid_hlora_label.Text = "Пахощі: " + DataBank.get_oksid_azota();
+                    DataBank.set_money(DataBank.get_money() + 70);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_order(DataBank.get_order() + 1);
+                    label2.Text = "Замовлення:" + DataBank.get_order();
 
                 }
                 else
@@ -179,14 +179,14 @@ namespace AlchemyAlpha0._1
                 panel1.BackgroundImage = Properties.Resources._4;
                 textBox1.Visible = true;
                 textBox1.Text = "Привести колега, для моїх ексерементів потрібна Сіль Порожнечі, потім зайду покажу результати";
-                if (DataBank.nitrogen_boron >= 1)
+                if (DataBank.get_nitrogen_boron() >= 1)
                 {
-                    DataBank.nitrogen_boron = DataBank.nitrogen_boron - 1;
-                    oksid_azota_label.Text = "Сіль Порожнечі: " + DataBank.nitrogen_boron;
-                    DataBank.money = DataBank.money + 80;
-                    Money_label.Text = "Гроші: " + DataBank.money + "$";
-                    DataBank.order = DataBank.order + 1;
-                    label2.Text = "Замовлення:" + DataBank.order;
+                    DataBank.set_nitrogen_boron(DataBank.get_nitrogen_boron() - 1);
+                    oksid_azota_label.Text = "Сіль Порожнечі: " + DataBank.get_nitrogen_boron();
+                    DataBank.set_money(DataBank.get_money() + 80);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_order(DataBank.get_order() + 1);
+                    label2.Text = "Замовлення:" + DataBank.get_order();
 
                 }
                 else
@@ -201,14 +201,14 @@ namespace AlchemyAlpha0._1
                 panel1.BackgroundImage = Properties.Resources._5;
                 textBox1.Visible = true;
                 textBox1.Text = "Потрібно Сторічне Добриво, мої рослини помирають від вашого холодного клімату.";
-                if (DataBank.trihlorid_azota >= 1)
+                if (DataBank.get_trihlorid_azota() >= 1)
                 {
-                    DataBank.trihlorid_azota = DataBank.trihlorid_azota - 1;
-                    nitrogen_boron_label.Text = "Сторічне Добриво: " + DataBank.trihlorid_azota;
-                    DataBank.money = DataBank.money + 90;
-                    Money_label.Text = "Гроші: " + DataBank.money + "$";
-                    DataBank.order = DataBank.order + 1;
-                    label2.Text = "Замовлення:" + DataBank.order;
+                    DataBank.set_trihlorid_azota(DataBank.get_trihlorid_azota() - 1);
+                    nitrogen_boron_label.Text = "Сторічне Добриво: " + DataBank.get_trihlorid_azota();
+                    DataBank.set_money(DataBank.get_money() + 90);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_order(DataBank.get_order() + 1);
+                    label2.Text = "Замовлення:" + DataBank.get_order();
 
                 }
                 else
@@ -223,14 +223,14 @@ namespace AlchemyAlpha0._1
                 panel1.BackgroundImage = Properties.Resources._6;
                 textBox1.Visible = true;
                 textBox1.Text = "У кузні потрібна нова партія Злитків Альтеіда. Впораєшся за декілька днів?";
-                if (DataBank.Boron >= 1)
+                if (DataBank.get_boron() >= 1)
                 {
-                    DataBank.Boron = DataBank.Boron - 1;
-                    Boron_label.Text = "Злиток Альтеіда: " + DataBank.Boron;
-                    DataBank.money = DataBank.money + 100;
-                    Money_label.Text = "Гроші: " + DataBank.money + "$";
-                    DataBank.order = DataBank.order + 1;
-                    label2.Text = "Замовлення:" + DataBank.order;
+                    DataBank.set_boron(DataBank.get_boron() - 1);
+                    Boron_label.Text = "Злиток Альтеіда: " + DataBank.get_boron();
+                    DataBank.set_money(DataBank.get_money() + 100);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_order(DataBank.get_order() + 1);
+                    label2.Text = "Замовлення:" + DataBank.get_order();
 
                 }
                 else
@@ -245,14 +245,14 @@ namespace AlchemyAlpha0._1
                 panel1.BackgroundImage = Properties.Resources._7;
                 textBox1.Visible = true;
                 textBox1.Text = "У бібліотеці завелися щури. Відвідувачі не дотримувалися правила \"З їжею не можна\". Знайдіть відповідний засіб вирішення проблеми.(Смрад Аарду)";
-                if (DataBank.Hydrogen_Sulfide >= 1)
+                if (DataBank.get_helium_hydrogen() >= 1)
                 {
-                    DataBank.Hydrogen_Sulfide = DataBank.Hydrogen_Sulfide - 1;
-                    Hydrogen_Sulfide_label.Text = "Смрад Аарду: " + DataBank.Hydrogen_Sulfide;
-                    DataBank.money = DataBank.money + 55;
-                    Money_label.Text = "Гроші: " + DataBank.money + "$";
-                    DataBank.order = DataBank.order + 1;
-                    label2.Text = "Замовлення:" + DataBank.order;
+                    DataBank.set_helium_hydrogen(DataBank.get_helium_hydrogen() - 1);
+                    Hydrogen_Sulfide_label.Text = "Смрад Аарду: " + DataBank.get_helium_hydrogen();
+                    DataBank.set_money(DataBank.get_money() + 55);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_order(DataBank.get_order() + 1);
+                    label2.Text = "Замовлення:" + DataBank.get_order();
 
                 }
                 else
@@ -267,14 +267,14 @@ namespace AlchemyAlpha0._1
                 panel1.BackgroundImage = Properties.Resources._8;
                 textBox1.Visible = true;
                 textBox1.Text = "На річницю хочу подарувати дружині намисто із Мрачними Кристалами. Впораєтеся із замовленням?";
-                if (DataBank.carbid_bora >= 1)
+                if (DataBank.get_carbid_bora() >= 1)
                 {
-                    DataBank.carbid_bora = DataBank.carbid_bora - 1;
-                    carbid_bora_label.Text = "Мрачний Кристал: " + DataBank.carbid_bora;
-                    DataBank.money = DataBank.money + 65;
-                    Money_label.Text = "Гроші: " + DataBank.money + "$";
-                    DataBank.order = DataBank.order + 1;
-                    label2.Text = "Замовлення:" + DataBank.order;
+                    DataBank.set_carbid_bora(DataBank.get_carbid_bora() - 1);
+                    carbid_bora_label.Text = "Мрачний Кристал: " + DataBank.get_carbid_bora();
+                    DataBank.set_money(DataBank.get_money() + 65);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_order(DataBank.get_order() + 1);
+                    label2.Text = "Замовлення:" + DataBank.get_order();
 
                 }
                 else
@@ -289,14 +289,14 @@ namespace AlchemyAlpha0._1
                 panel1.BackgroundImage = Properties.Resources._1;
                 textBox1.Visible = true;
                 textBox1.Text = "Для моїх цілей знадобився Кристал Вілідора. Чим швидше дістанеш, тим більше отримаєш";
-                if (DataBank.sulfur >= 1)
+                if (DataBank.get_sulfur() >= 1)
                 {
-                    DataBank.sulfur = DataBank.sulfur - 1;
-                    Sulfur_label.Text = "Кристал Вілідора: " + DataBank.sulfur;
-                    DataBank.money = DataBank.money + 75;
-                    Money_label.Text = "Гроші: " + DataBank.money + "$";
-                    DataBank.order = DataBank.order + 1;
-                    label2.Text = "Замовлення:" + DataBank.order;
+                    DataBank.set_sulfur(DataBank.get_sulfur() - 1);
+                    Sulfur_label.Text = "Кристал Вілідора: " + DataBank.get_sulfur();
+                    DataBank.set_money(DataBank.get_money() + 75);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_order(DataBank.get_order() + 1);
+                    label2.Text = "Замовлення:" + DataBank.get_order();
 
                 }
                 else

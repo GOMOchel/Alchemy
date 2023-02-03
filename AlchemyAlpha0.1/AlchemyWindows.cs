@@ -27,7 +27,7 @@ namespace AlchemyAlpha0._1
         private void AlchemyWindows_Load(object sender, EventArgs e)
         {
             this.BackgroundImage = Properties.Resources.mag3;
-            if (DataBank.sound_volume == true)
+            if (DataBank.get_sound_volume() == true)
             {
                 SoundPlayer sound = new SoundPlayer(Properties.Resources.water);
                 sound.PlayLooping();
@@ -35,36 +35,36 @@ namespace AlchemyAlpha0._1
             Inventory_Panel.Visible = false;
             Recipes_Panel.Visible = false;
             Alchemy_Panel.Visible = true;
-            Money_label.Text = "Гроші: " + DataBank.money + "$";
-            Hydrogen_label.Text = "Водород: " + DataBank.hydrogen;
-            Sulfur_label.Text = "Кристал Вілідора: " + DataBank.sulfur;
-            Chlorine_label.Text = "Вода Шанті: " + DataBank.Chlorine;
-            Boron_label.Text = "Злиток Альтеіда: " + DataBank.Boron;
-            Helium_label.Text = "Дихання Мілмулніра: " + DataBank.Helium;
-            Nitrogen_label.Text = "Слина Сприггана: " + DataBank.Nitrogen;
-            Hydrogen_Sulfide_label.Text = "Смрад Аарду: " + DataBank.Hydrogen_Sulfide;
-            hel_hel_hel_label.Text = "Корунда: " + DataBank.Carbon;
-            helium_hydrogen_label.Text = "Ектоплазма: " + DataBank.Hydrogen_Sulfide;
-            carbid_bora_label.Text = "Мрачний Кристал: " + DataBank.carbid_bora;
-            oksid_azota_label.Text = "Сіль Порожнечі: " + DataBank.nitrogen_boron;
-            dioksid_hlora_label.Text = "Пахощі: " + DataBank.oksid_azota;
-            trihlorid_azota_label.Text = "Вовча Загибель: " + DataBank.dioksid_hlora;
-            nitrogen_boron_label.Text = "Сторічне Добриво: " + DataBank.trihlorid_azota;
+            Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+            Hydrogen_label.Text = "Водород: " + DataBank.get_hydrogen();
+            Sulfur_label.Text = "Кристал Вілідора: " + DataBank.get_sulfur();
+            Chlorine_label.Text = "Вода Шанті: " + DataBank.get_chlorine();
+            Boron_label.Text = "Злиток Альтеіда: " + DataBank.get_boron();
+            Helium_label.Text = "Дихання Мілмулніра: " + DataBank.get_helium();
+            Nitrogen_label.Text = "Слина Сприггана: " + DataBank.get_nitrogen();
+            Hydrogen_Sulfide_label.Text = "Смрад Аарду: " + DataBank.get_hydrogen_sulfide();
+            hel_hel_hel_label.Text = "Корунда: " + DataBank.get_carbon();
+            helium_hydrogen_label.Text = "Ектоплазма: " + DataBank.get_helium_hydrogen();
+            carbid_bora_label.Text = "Мрачний Кристал: " + DataBank.get_carbid_bora();
+            oksid_azota_label.Text = "Сіль Порожнечі: " + DataBank.get_nitrogen_boron();
+            dioksid_hlora_label.Text = "Пахощі: " + DataBank.get_oksid_azota();
+            trihlorid_azota_label.Text = "Вовча Загибель: " + DataBank.get_dioksid_hlora();
+            nitrogen_boron_label.Text = "Сторічне Добриво: " + DataBank.get_trihlorid_azota();
         }
 
         private void Mix_Button_Click_1(object sender, EventArgs e)
         {
-            if (DataBank.HydrogenSulfide == Mix_TextBox.Text)
+            if (DataBank.get_HydrogenSulfide() == Mix_TextBox.Text)
             {
-                if (DataBank.hydrogen >= 1 && DataBank.sulfur >= 1)
+                if (DataBank.get_hydrogen() >= 1 && DataBank.get_sulfur() >= 1)
                 {
                     Mix_Label.Text = "Результат : Смрад Аарду";
-                    DataBank.Hydrogen_Sulfide += 1;
-                    Hydrogen_Sulfide_label.Text = "Смрад Аарду: " + DataBank.Hydrogen_Sulfide;
-                    DataBank.hydrogen -= 1;
-                    Hydrogen_label.Text = "Водород: " + DataBank.hydrogen;
-                    DataBank.sulfur -= 1;
-                    Sulfur_label.Text = "Кристал Вілідора: " + DataBank.sulfur;
+                    DataBank.set_hydrogen_sulfide(DataBank.get_hydrogen_sulfide() + 1);
+                    Hydrogen_Sulfide_label.Text = "Смрад Аарду: " + DataBank.get_hydrogen_sulfide();
+                    DataBank.set_hydrogen(DataBank.get_hydrogen() - 1);
+                    Hydrogen_label.Text = "Водород: " + DataBank.get_hydrogen();
+                    DataBank.set_sulfur(DataBank.get_sulfur() - 1);
+                    Sulfur_label.Text = "Кристал Вілідора: " + DataBank.get_sulfur();
 
                 }
                 else
@@ -73,29 +73,29 @@ namespace AlchemyAlpha0._1
                 }
 
             }
-            if (DataBank.helhelhel == Mix_TextBox.Text)
+            if (DataBank.get_helhelhel() == Mix_TextBox.Text)
             {
 
                 Mix_Label.Text = "Результат : Корунда";
-                hel_hel_hel_label.Text = "Корунда: " + DataBank.Carbon;
-                DataBank.Helium -= 1;
-                Helium_label.Text = "Дихання Мілмулніра: " + DataBank.Helium;
+                hel_hel_hel_label.Text = "Корунда: " + DataBank.get_carbon();
+                DataBank.set_helium(DataBank.get_helium() - 1);
+                Helium_label.Text = "Дихання Мілмулніра: " + DataBank.get_helium();
 
 
 
 
             }
-            if (DataBank.heliumhydrogen == Mix_TextBox.Text)
+            if (DataBank.get_heliumhydrogen() == Mix_TextBox.Text)
             {
-                if (DataBank.Helium >= 1 && DataBank.hydrogen >= 1)
+                if (DataBank.get_helium() >= 1 && DataBank.get_hydrogen() >= 1)
                 {
                     Mix_Label.Text = "Результат : Ектоплазма";
-                    DataBank.Hydrogen_Sulfide += 1;
-                    helium_hydrogen_label.Text = "Ектоплазма: " + DataBank.Hydrogen_Sulfide;
-                    DataBank.Helium -= 1;
-                    Helium_label.Text = "Дихання Мілмулніра: " + DataBank.Helium;
-                    DataBank.hydrogen -= 1;
-                    Nitrogen_label.Text = "Слина Сприггана: " + DataBank.hydrogen;
+                    DataBank.set_hydrogen_sulfide(DataBank.get_hydrogen_sulfide() + 1);
+                    helium_hydrogen_label.Text = "Ектоплазма: " + DataBank.get_hydrogen_sulfide();
+                    DataBank.set_helium(DataBank.get_helium() - 1);
+                    Helium_label.Text = "Дихання Мілмулніра: " + DataBank.get_helium();
+                    DataBank.set_hydrogen(DataBank.get_hydrogen() - 1);
+                    Nitrogen_label.Text = "Слина Сприггана: " + DataBank.get_hydrogen();
 
                 }
                 else
@@ -105,17 +105,17 @@ namespace AlchemyAlpha0._1
 
 
             }
-            if (DataBank.carbidbora == Mix_TextBox.Text)
+            if (DataBank.get_carbidbora() == Mix_TextBox.Text)
             {
-                if (DataBank.Boron >= 1 && DataBank.Carbon >= 1)
+                if (DataBank.get_boron() >= 1 && DataBank.get_carbon() >= 1)
                 {
                     Mix_Label.Text = "Результат : Мрачний Кристал";
-                    DataBank.carbid_bora += 1;
-                    carbid_bora_label.Text = "Мрачний Кристал: " + DataBank.carbid_bora;
-                    DataBank.Boron -= 1;
-                    Boron_label.Text = "Злиток Альтеіда: " + DataBank.Boron;
-                    DataBank.Carbon -= 1;
-                    hel_hel_hel_label.Text = "Корунда: " + DataBank.Carbon;
+                    DataBank.set_carbid_bora(DataBank.get_carbid_bora() + 1);
+                    carbid_bora_label.Text = "Мрачний Кристал: " + DataBank.get_carbid_bora();
+                    DataBank.set_boron(DataBank.get_boron() - 1);
+                    Boron_label.Text = "Злиток Альтеіда: " + DataBank.get_boron();
+                    DataBank.set_carbon(DataBank.get_carbon() - 1);
+                    hel_hel_hel_label.Text = "Корунда: " + DataBank.get_carbon();
 
                 }
                 else
@@ -124,17 +124,17 @@ namespace AlchemyAlpha0._1
                 }
 
             }
-            if (DataBank.nitrogenboron == Mix_TextBox.Text)
+            if (DataBank.get_nitrogenboron() == Mix_TextBox.Text)
             {
-                if (DataBank.Boron >= 1 && DataBank.Nitrogen >= 1)
+                if (DataBank.get_boron() >= 1 && DataBank.get_nitrogen() >= 1)
                 {
                     Mix_Label.Text = "Результат : Сіль Порожнечі";
-                    DataBank.nitrogen_boron += 1;
-                    oksid_azota_label.Text = "Сіль Порожнечі: " + DataBank.nitrogen_boron;
-                    DataBank.Boron -= 1;
-                    Boron_label.Text = "Злиток Альтеіда: " + DataBank.Boron;
-                    DataBank.Nitrogen -= 1;
-                    Nitrogen_label.Text = "Слина Сприггана: " + DataBank.Nitrogen;
+                    DataBank.set_nitrogen_boron(DataBank.get_nitrogen_boron() + 1);
+                    oksid_azota_label.Text = "Сіль Порожнечі: " + DataBank.get_nitrogen_boron();
+                    DataBank.set_boron(DataBank.get_boron() - 1);
+                    Boron_label.Text = "Злиток Альтеіда: " + DataBank.get_boron();
+                    DataBank.set_nitrogen(DataBank.get_nitrogen() - 1);
+                    Nitrogen_label.Text = "Слина Сприггана: " + DataBank.get_nitrogen();
 
                 }
                 else
@@ -143,16 +143,16 @@ namespace AlchemyAlpha0._1
                 }
 
             }
-            if (DataBank.oksidazota == Mix_TextBox.Text)
+            if (DataBank.get_oksidazota() == Mix_TextBox.Text)
             {
-                if (DataBank.Nitrogen >= 1 && DataBank.Oxygen >= 1)
+                if (DataBank.get_nitrogen() >= 1 && DataBank.get_oxygen() >= 1)
                 {
                     Mix_Label.Text = "Результат : Пахощі";
-                    DataBank.oksid_azota += 1;
-                    dioksid_hlora_label.Text = "Пахощі: " + DataBank.oksid_azota;
-                    DataBank.Nitrogen -= 1;
-                    Nitrogen_label.Text = "Слина Сприггана: " + DataBank.Nitrogen;
-                    DataBank.Oxygen -= 1;
+                    DataBank.set_oksid_azota(DataBank.get_oksid_azota() + 1);
+                    dioksid_hlora_label.Text = "Пахощі: " + DataBank.get_oksid_azota();
+                    DataBank.set_nitrogen(DataBank.get_nitrogen() - 1);
+                    Nitrogen_label.Text = "Слина Сприггана: " + DataBank.get_nitrogen();
+                    DataBank.set_oxygen(DataBank.get_oxygen() - 1);
                     //  label22.Text = "Кислород: " + Oxygen;
 
                 }
@@ -162,16 +162,16 @@ namespace AlchemyAlpha0._1
                 }
 
             }
-            if (DataBank.dioksidhlora == Mix_TextBox.Text)
+            if (DataBank.get_dioksidhlora() == Mix_TextBox.Text)
             {
-                if (DataBank.Chlorine >= 1 && DataBank.Oxygen >= 1)
+                if (DataBank.get_chlorine() >= 1 && DataBank.get_oxygen() >= 1)
                 {
                     Mix_Label.Text = "Результат : Вовча Загибель";
-                    DataBank.dioksid_hlora += 1;
-                    trihlorid_azota_label.Text = "Вовча Загибель: " + DataBank.dioksid_hlora;
-                    DataBank.Chlorine -= 1;
-                    Chlorine_label.Text = "Вода Шанті: " + DataBank.Chlorine;
-                    DataBank.Oxygen -= 2;
+                    DataBank.set_dioksid_hlora(DataBank.get_dioksid_hlora() + 1);
+                    trihlorid_azota_label.Text = "Вовча Загибель: " + DataBank.get_dioksid_hlora();
+                    DataBank.set_chlorine(DataBank.get_chlorine() - 1);
+                    Chlorine_label.Text = "Вода Шанті: " + DataBank.get_chlorine();
+                    DataBank.set_oxygen(DataBank.get_oxygen() - 2);
                     // label22.Text = "Кислород: " + Oxygen;
                 }
                 else
@@ -180,17 +180,17 @@ namespace AlchemyAlpha0._1
                 }
 
             }
-            if (DataBank.trihloridazota == Mix_TextBox.Text)
+            if (DataBank.get_trihloridazota() == Mix_TextBox.Text)
             {
-                if (DataBank.Nitrogen >= 1 && DataBank.Chlorine >= 1)
+                if (DataBank.get_nitrogen() >= 1 && DataBank.get_chlorine() >= 1)
                 {
                     Mix_Label.Text = "Результат : Сторічне Добриво";
-                    DataBank.nitrogen_boron += 1;
-                    nitrogen_boron_label.Text = "Сторічне Добриво: " + DataBank.trihlorid_azota;
-                    DataBank.Nitrogen -= 1;
-                    Nitrogen_label.Text = "Слина Сприггана: " + DataBank.Nitrogen;
-                    DataBank.Chlorine -= 3;
-                    Chlorine_label.Text = "Вода Шанті: " + DataBank.Chlorine;
+                    DataBank.set_nitrogen_boron(DataBank.get_nitrogen_boron() + 1);
+                    nitrogen_boron_label.Text = "Сторічне Добриво: " + DataBank.get_trihlorid_azota();
+                    DataBank.set_nitrogen(DataBank.get_nitrogen() - 1);
+                    Nitrogen_label.Text = "Слина Сприггана: " + DataBank.get_nitrogen();
+                    DataBank.set_chlorine(DataBank.get_chlorine() - 3);
+                    Chlorine_label.Text = "Вода Шанті: " + DataBank.get_chlorine();
                 }
                 else
                 {

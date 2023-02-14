@@ -99,7 +99,6 @@ namespace AlchemyAlpha0._1
             int b = 10;
             panel1.Size = new Size(500,545);
             panel1.Location = new Point(1500,400);
-           // textBox1.Location = new Point(1000,650);
             Random rnd = new Random();
             int c = rnd.Next(a, b);
             if (c == 1)

@@ -41,6 +41,8 @@ namespace AlchemyAlpha0._1
 
         static bool sound_volume = true;
 
+        //static int buyers = null;
+
         public static int get_money()
         {
             return money;

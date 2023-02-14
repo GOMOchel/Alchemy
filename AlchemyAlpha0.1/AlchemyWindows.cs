@@ -20,8 +20,6 @@ namespace AlchemyAlpha0._1
             InitializeComponent();
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
-            //KeyPreview = true;
-           // KeyDown += (s, e) => { if (e.KeyValue == (char)Keys.B) Mix_Button_Click(Mix_Button, null); };
         }
 
         private void AlchemyWindows_Load(object sender, EventArgs e)
@@ -153,8 +151,6 @@ namespace AlchemyAlpha0._1
                     DataBank.set_nitrogen(DataBank.get_nitrogen() - 1);
                     Nitrogen_label.Text = "Слина Сприггана: " + DataBank.get_nitrogen();
                     DataBank.set_oxygen(DataBank.get_oxygen() - 1);
-                    //  label22.Text = "Кислород: " + Oxygen;
-
                 }
                 else
                 {
@@ -172,7 +168,6 @@ namespace AlchemyAlpha0._1
                     DataBank.set_chlorine(DataBank.get_chlorine() - 1);
                     Chlorine_label.Text = "Вода Шанті: " + DataBank.get_chlorine();
                     DataBank.set_oxygen(DataBank.get_oxygen() - 2);
-                    // label22.Text = "Кислород: " + Oxygen;
                 }
                 else
                 {

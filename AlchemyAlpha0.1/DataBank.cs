@@ -9,7 +9,6 @@ namespace AlchemyAlpha0._1
 {
     static class DataBank
     {
-        private:
         static int order = 0;
         static int money = 240;
         /// элементы
@@ -41,7 +40,6 @@ namespace AlchemyAlpha0._1
         static string trihloridazota = "N + Cl3";
 
         static bool sound_volume = true;
-        public:
 
         public static int get_money()
         {

@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.Menu_panel = new System.Windows.Forms.Panel();
+            this.sell = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.sale = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.Home_Button = new System.Windows.Forms.Button();
             this.Recipes_Button = new System.Windows.Forms.Button();
@@ -78,8 +78,8 @@
             // Menu_panel
             // 
             this.Menu_panel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Menu_panel.Controls.Add(this.sell);
             this.Menu_panel.Controls.Add(this.button2);
-            this.Menu_panel.Controls.Add(this.sale);
             this.Menu_panel.Controls.Add(this.button1);
             this.Menu_panel.Controls.Add(this.Home_Button);
             this.Menu_panel.Controls.Add(this.Recipes_Button);
@@ -90,10 +90,23 @@
             this.Menu_panel.Controls.Add(this.Main_Button);
             this.Menu_panel.Controls.Add(this.Shop_button);
             this.Menu_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Menu_panel.Location = new System.Drawing.Point(0, 461);
+            this.Menu_panel.Location = new System.Drawing.Point(0, 723);
             this.Menu_panel.Name = "Menu_panel";
-            this.Menu_panel.Size = new System.Drawing.Size(884, 100);
+            this.Menu_panel.Size = new System.Drawing.Size(1862, 100);
             this.Menu_panel.TabIndex = 0;
+            // 
+            // sell
+            // 
+            this.sell.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sell.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.sell.BackgroundImage = global::AlchemyAlpha0._1.Properties.Resources.sell1;
+            this.sell.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.sell.Location = new System.Drawing.Point(268, 53);
+            this.sell.Name = "sell";
+            this.sell.Size = new System.Drawing.Size(40, 40);
+            this.sell.TabIndex = 11;
+            this.sell.UseVisualStyleBackColor = false;
+            this.sell.Click += new System.EventHandler(this.sell_Click);
             // 
             // button2
             // 
@@ -101,25 +114,12 @@
             this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(557, 53);
+            this.button2.Location = new System.Drawing.Point(1535, 53);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(40, 40);
             this.button2.TabIndex = 10;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // sale
-            // 
-            this.sale.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.sale.BackgroundImage = global::AlchemyAlpha0._1.Properties.Resources.selling;
-            this.sale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sale.Location = new System.Drawing.Point(557, 54);
-            this.sale.Name = "sale";
-            this.sale.Size = new System.Drawing.Size(40, 40);
-            this.sale.TabIndex = 9;
-            this.sale.UseVisualStyleBackColor = false;
-            this.sale.Visible = false;
-            this.sale.Click += new System.EventHandler(this.sale_Click);
             // 
             // button1
             // 
@@ -127,7 +127,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.BackgroundImage = global::AlchemyAlpha0._1.Properties.Resources.group;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(703, 7);
+            this.button1.Location = new System.Drawing.Point(211, 53);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(40, 40);
             this.button1.TabIndex = 8;
@@ -140,7 +140,7 @@
             this.Home_Button.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Home_Button.BackgroundImage = global::AlchemyAlpha0._1.Properties.Resources.outline;
             this.Home_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Home_Button.Location = new System.Drawing.Point(756, 45);
+            this.Home_Button.Location = new System.Drawing.Point(1734, 45);
             this.Home_Button.Name = "Home_Button";
             this.Home_Button.Size = new System.Drawing.Size(36, 37);
             this.Home_Button.TabIndex = 7;
@@ -153,7 +153,7 @@
             this.Recipes_Button.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Recipes_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Recipes_Button.BackgroundImage")));
             this.Recipes_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Recipes_Button.Location = new System.Drawing.Point(630, 7);
+            this.Recipes_Button.Location = new System.Drawing.Point(1608, 7);
             this.Recipes_Button.Name = "Recipes_Button";
             this.Recipes_Button.Size = new System.Drawing.Size(40, 40);
             this.Recipes_Button.TabIndex = 6;
@@ -169,7 +169,6 @@
             this.label2.Size = new System.Drawing.Size(134, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Замовлення: 0";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Money_label
             // 
@@ -180,7 +179,6 @@
             this.Money_label.Size = new System.Drawing.Size(107, 20);
             this.Money_label.TabIndex = 4;
             this.Money_label.Text = "Гроші: 240$";
-            this.Money_label.Click += new System.EventHandler(this.Money_label_Click);
             // 
             // Inventory_Button
             // 
@@ -188,7 +186,7 @@
             this.Inventory_Button.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Inventory_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Inventory_Button.BackgroundImage")));
             this.Inventory_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Inventory_Button.Location = new System.Drawing.Point(557, 7);
+            this.Inventory_Button.Location = new System.Drawing.Point(1535, 7);
             this.Inventory_Button.Name = "Inventory_Button";
             this.Inventory_Button.Size = new System.Drawing.Size(40, 40);
             this.Inventory_Button.TabIndex = 3;
@@ -202,7 +200,7 @@
             this.Alchemy_Button.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Alchemy_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Alchemy_Button.BackgroundImage")));
             this.Alchemy_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Alchemy_Button.Location = new System.Drawing.Point(798, 13);
+            this.Alchemy_Button.Location = new System.Drawing.Point(1776, 13);
             this.Alchemy_Button.Name = "Alchemy_Button";
             this.Alchemy_Button.Size = new System.Drawing.Size(60, 60);
             this.Alchemy_Button.TabIndex = 2;
@@ -215,12 +213,11 @@
             this.Main_Button.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Main_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Main_Button.BackgroundImage")));
             this.Main_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Main_Button.Location = new System.Drawing.Point(428, 13);
+            this.Main_Button.Location = new System.Drawing.Point(917, 13);
             this.Main_Button.Name = "Main_Button";
             this.Main_Button.Size = new System.Drawing.Size(60, 60);
             this.Main_Button.TabIndex = 1;
             this.Main_Button.UseVisualStyleBackColor = false;
-            this.Main_Button.Click += new System.EventHandler(this.Main_Button_Click);
             // 
             // Shop_button
             // 
@@ -536,7 +533,7 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::AlchemyAlpha0._1.Properties.Resources._1;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(646, 196);
+            this.panel1.Location = new System.Drawing.Point(1624, 458);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(238, 259);
             this.panel1.TabIndex = 9;
@@ -548,14 +545,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.BackColor = System.Drawing.SystemColors.InfoText;
             this.textBox1.ForeColor = System.Drawing.Color.Transparent;
-            this.textBox1.Location = new System.Drawing.Point(0, 445);
+            this.textBox1.Location = new System.Drawing.Point(0, 707);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(884, 23);
+            this.textBox1.Size = new System.Drawing.Size(1862, 23);
             this.textBox1.TabIndex = 10;
-            // 
-            // saveFileDialog1
-            // 
-            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
             // 
             // MainWindow
             // 
@@ -563,7 +556,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlchemyAlpha0._1.Properties.Resources.fon_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(1862, 823);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Inventory_Panel);
@@ -625,8 +618,8 @@
         private Button button1;
         private Panel panel1;
         private TextBox textBox1;
-        private Button sale;
         private Button button2;
         private SaveFileDialog saveFileDialog1;
+        private Button sell;
     }
 }

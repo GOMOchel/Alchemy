@@ -9,40 +9,48 @@ namespace AlchemyAlpha0._1
 {
     static class DataBank
     {
-        static int order = 0;
-        static int money = 240;
+        private static int bueyr = 0;
+        private static int order = 0;
+        private static int money = 240;
         /// элементы
-        static int hydrogen = 0;// +
-        static int sulfur = 0; // +
-        static int Helium = 0;//гелий + +
-        static int Boron = 0;//бор ++
-        static int Carbon = 10;//углерод // не добавляю в покупки
-        static int Nitrogen = 0;//азот ++
-        static int Oxygen = 777;//кислород 
-        static int Chlorine = 0;//хлор ++
+        private static int hydrogen = 0;// +
+        private static int sulfur = 0; // +
+        private static int Helium = 0;//гелий + +
+        private static int Boron = 0;//бор ++
+        private static int Carbon = 10;//углерод // не добавляю в покупки
+        private static int Nitrogen = 0;//азот ++
+        private static int Oxygen = 777;//кислород 
+        private static int Chlorine = 0;//хлор ++
         /// кол-во синтезируемого вещества
-        static int Hydrogen_Sulfide = 0;
-        static int hel_hel_hel = 0;// получение из 3 гелиев одного углерода
-        static int helium_hydrogen = 0;//получение гидрогелия из гелия и гидрогена
-        static int carbid_bora = 0;//получение карбида бора из карбона и бора
-        static int nitrogen_boron = 0;//получение нитрида бора из азота и бора
-        static int oksid_azota = 0;//оксид азота из азота и кислорода
-        static int dioksid_hlora = 0;//диоксид хлора из хлора и двух кислорода 
-        static int trihlorid_azota = 0;//трихлорид азота из азотов и трех хлора
+        private static int Hydrogen_Sulfide = 0;
+        private static int hel_hel_hel = 0;// получение из 3 гелиев одного углерода
+        private static int helium_hydrogen = 0;//получение гидрогелия из гелия и гидрогена
+        private static int carbid_bora = 0;//получение карбида бора из карбона и бора
+        private static int nitrogen_boron = 0;//получение нитрида бора из азота и бора
+        private static int oksid_azota = 0;//оксид азота из азота и кислорода
+        private static int dioksid_hlora = 0;//диоксид хлора из хлора и двух кислорода 
+        private static int trihlorid_azota = 0;//трихлорид азота из азотов и трех хлора
         /// комбинация для синтеза
-        static string HydrogenSulfide = "H2 + S";
-        static string helhelhel = "He + He + He";
-        static string heliumhydrogen = "He + H";
-        static string carbidbora = "C + B";
-        static string nitrogenboron = "N + B";
-        static string oksidazota = "N + O";
-        static string dioksidhlora = "Cl + O2";
-        static string trihloridazota = "N + Cl3";
+        private static string HydrogenSulfide = "H2 + S";
+        private static string helhelhel = "He + He + He";
+        private static string heliumhydrogen = "He + H";
+        private static string carbidbora = "C + B";
+        private static string nitrogenboron = "N + B";
+        private static string oksidazota = "N + O";
+        private static string dioksidhlora = "Cl + O2";
+        private static string trihloridazota = "N + Cl3";
 
-        static bool sound_volume = true;
+        private static bool sound_volume = true;
 
-        //static int buyers = null;
 
+        public static int get_bueyr()
+        {
+            return bueyr;
+        }
+        public static void set_bueyr(int buy)
+        {
+            bueyr = buy;
+        }
         public static int get_money()
         {
             return money;

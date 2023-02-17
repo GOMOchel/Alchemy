@@ -419,6 +419,10 @@ namespace AlchemyAlpha0._1
                     MessageBox.Show("У вас недостатньо інгредієнтів!");
                 }
             }
+            else
+            {
+                MessageBox.Show("Ви ще не запросили покупця");
+            }
         }
     }
 }

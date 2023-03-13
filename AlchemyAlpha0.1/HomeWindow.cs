@@ -115,7 +115,7 @@ namespace AlchemyAlpha0._1
                 while (false);
                 Load_Save_button.BackColor = Color.LightGoldenrodYellow;
                 Load_Save_button.Text = "Завантажено!";
-                MessageBox.Show("Файл відкрито", "Робота з файлом")
+                MessageBox.Show("Файл відкрито", "Робота з файлом");
             }
             catch (Exception ex)
             {

@@ -163,18 +163,20 @@ namespace AlchemyAlpha0._1
 
         private void Helium_button_Click(object sender, EventArgs e)
         {
-            try { 
-            if (DataBank.get_money() >= 40)
+            try
             {
-                DataBank.set_money(DataBank.get_money() - 40);
-                Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
-                DataBank.set_helium(DataBank.get_helium() + 1);
-                Helium_label.Text = "Дихання Мілмулніра: " + DataBank.get_helium();
-               
-            }
-            else
-            {
-                MessageBox.Show("У вас недостатньо грошей!");
+                if (DataBank.get_money() >= 40)
+                {
+                    DataBank.set_money(DataBank.get_money() - 40);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_helium(DataBank.get_helium() + 1);
+                    Helium_label.Text = "Дихання Мілмулніра: " + DataBank.get_helium();
+
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо грошей!");
+                }
             }
             catch (Exception ex)
             {

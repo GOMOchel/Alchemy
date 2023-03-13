@@ -71,70 +71,99 @@ namespace AlchemyAlpha0._1
 
         private void Hydrogen_button_Click(object sender, EventArgs e)
         {
-            if (DataBank.get_money() >= 10)
+            try
             {
-                DataBank.set_money(DataBank.get_money() - 10);
-                Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
-                DataBank.set_hydrogen(DataBank.get_hydrogen() + 1);
-                Hydrogen_label.Text = "Водород: " + DataBank.get_hydrogen();
-                
+                if (DataBank.get_money() >= 10)
+                {
+                    DataBank.set_money(DataBank.get_money() - 10);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_hydrogen(DataBank.get_hydrogen() + 1);
+                    Hydrogen_label.Text = "Водород: " + DataBank.get_hydrogen();
+
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо грошей!");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("У вас недостатньо грошей!");
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void Sulfur_button_Click(object sender, EventArgs e)
         {
-            if (DataBank.get_money() >= 10)
+            try
             {
-                DataBank.set_money(DataBank.get_money() - 10);
-                Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
-                DataBank.set_sulfur(DataBank.get_sulfur() + 1);
-                Sulfur_label.Text = "Кристал Вілідора: " + DataBank.get_sulfur();
-             
+                if (DataBank.get_money() >= 10)
+                {
+                    DataBank.set_money(DataBank.get_money() - 10);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_sulfur(DataBank.get_sulfur() + 1);
+                    Sulfur_label.Text = "Кристал Вілідора: " + DataBank.get_sulfur();
+
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо грошей!");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("У вас недостатньо грошей!");
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void Chlorine_button_Click(object sender, EventArgs e)
         {
-            if (DataBank.get_money() >= 20)
+            try
             {
-                DataBank.set_money(DataBank.get_money() - 20);
-                Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
-                DataBank.set_chlorine(DataBank.get_chlorine() + 1);
-                Chlorine_label.Text = "Вода Шанті: " + DataBank.get_chlorine();
-                
+                if (DataBank.get_money() >= 20)
+                {
+                    DataBank.set_money(DataBank.get_money() - 20);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_chlorine(DataBank.get_chlorine() + 1);
+                    Chlorine_label.Text = "Вода Шанті: " + DataBank.get_chlorine();
+
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо грошей!");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("У вас недостатньо грошей!");
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void Boron_button_Click(object sender, EventArgs e)
         {
-            if (DataBank.get_money() >= 40)
+            try
             {
-                DataBank.set_money(DataBank.get_money() - 40);
-                Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
-                DataBank.set_boron(DataBank.get_boron() + 1);
-                Boron_label.Text = "Злиток Альтеіда: " + DataBank.get_boron();
-              
+                if (DataBank.get_money() >= 40)
+                {
+                    DataBank.set_money(DataBank.get_money() - 40);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_boron(DataBank.get_boron() + 1);
+                    Boron_label.Text = "Злиток Альтеіда: " + DataBank.get_boron();
+
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо грошей!");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("У вас недостатньо грошей!");
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void Helium_button_Click(object sender, EventArgs e)
         {
+            try { 
             if (DataBank.get_money() >= 40)
             {
                 DataBank.set_money(DataBank.get_money() - 40);
@@ -147,21 +176,32 @@ namespace AlchemyAlpha0._1
             {
                 MessageBox.Show("У вас недостатньо грошей!");
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Nitrogen_button_Click(object sender, EventArgs e)
         {
-            if (DataBank.get_money() >= 50)
+            try
             {
-                DataBank.set_money(DataBank.get_money() - 50);
-                Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
-                DataBank.set_nitrogen(DataBank.get_nitrogen() + 1);
-                Nitrogen_label.Text = "Слина Сприггана: " + DataBank.get_nitrogen();
-               
+                if (DataBank.get_money() >= 50)
+                {
+                    DataBank.set_money(DataBank.get_money() - 50);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_nitrogen(DataBank.get_nitrogen() + 1);
+                    Nitrogen_label.Text = "Слина Сприггана: " + DataBank.get_nitrogen();
+
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо грошей!");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("У вас недостатньо грошей!");
+                MessageBox.Show(ex.Message);
             }
         }
 

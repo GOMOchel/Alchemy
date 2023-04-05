@@ -241,6 +241,28 @@ namespace AlchemyAlpha0._1
                 // сохраняем текст в файл
                 string[] files = DataBank.getallstr().ToArray();
                 System.IO.File.WriteAllLines(filename, files);
+                List<string> linesToWrite = new List<string>();
+                linesToWrite.Add(DataBank.get_bueyr().ToString());
+                linesToWrite.Add(DataBank.get_order().ToString());
+                linesToWrite.Add(DataBank.get_money().ToString());
+                linesToWrite.Add(DataBank.get_hydrogen().ToString());
+                linesToWrite.Add(DataBank.get_sulfur().ToString());
+                linesToWrite.Add(DataBank.get_helium().ToString());
+                linesToWrite.Add(DataBank.get_boron().ToString());
+                linesToWrite.Add(DataBank.get_carbon().ToString());
+                linesToWrite.Add(DataBank.get_nitrogen().ToString());
+                linesToWrite.Add(DataBank.get_oxygen().ToString());
+                linesToWrite.Add(DataBank.get_chlorine().ToString());
+                linesToWrite.Add(DataBank.get_hydrogen_sulfide().ToString());
+                linesToWrite.Add(DataBank.get_hel_hel_hel().ToString());
+                linesToWrite.Add(DataBank.get_helium_hydrogen().ToString());
+                linesToWrite.Add(DataBank.get_carbid_bora().ToString());
+                linesToWrite.Add(DataBank.get_nitrogen_boron().ToString());
+                linesToWrite.Add(DataBank.get_oksid_azota().ToString());
+                linesToWrite.Add(DataBank.get_dioksid_hlora().ToString());
+                linesToWrite.Add(DataBank.get_trihlorid_azota().ToString());
+                System.IO.File.WriteAllLines(filename, linesToWrite);
+
 
                 MessageBox.Show("Файл збережено", "Робота з файлом");
             }

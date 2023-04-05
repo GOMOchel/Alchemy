@@ -84,9 +84,6 @@ namespace AlchemyAlpha0._1
 
         private void Load_Save_button_Click(object sender, EventArgs e)
         {
-            Load_Save_button.BackColor = Color.LightGoldenrodYellow;
-            Load_Save_button.Text = "Завантажено!";
-
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
             try
@@ -94,23 +91,25 @@ namespace AlchemyAlpha0._1
                 string[] fileText = File.ReadAllLines(openFileDialog1.FileName);
                 do
                 {
-                    DataBank.set_order(Int32.Parse(fileText[0]));
-                    DataBank.set_money(Int32.Parse(fileText[1]));
-                    DataBank.set_hydrogen(Int32.Parse(fileText[2]));
-                    DataBank.set_sulfur(Int32.Parse(fileText[3]));
-                    DataBank.set_helium(Int32.Parse(fileText[4]));
-                    DataBank.set_boron(Int32.Parse(fileText[5]));
-                    DataBank.set_carbon(Int32.Parse(fileText[6]));
-                    DataBank.set_nitrogen(Int32.Parse(fileText[7]));
-                    DataBank.set_oxygen(Int32.Parse(fileText[8]));
-                    DataBank.set_chlorine(Int32.Parse(fileText[9]));
-                    DataBank.set_hydrogen_sulfide(Int32.Parse(fileText[10]));
-                    DataBank.set_hel_hel_hel(Int32.Parse(fileText[11]));
-                    DataBank.set_helium_hydrogen(Int32.Parse(fileText[12]));
-                    DataBank.set_carbid_bora(Int32.Parse(fileText[13]));
-                    DataBank.set_nitrogen_boron(Int32.Parse(fileText[14]));
-                    DataBank.set_oksid_azota(Int32.Parse(fileText[15]));
-                    DataBank.set_trihlorid_azota(Int32.Parse(fileText[16]));
+                    DataBank.set_bueyr(Int32.Parse(fileText[0]));
+                    DataBank.set_order(Int32.Parse(fileText[1]));
+                    DataBank.set_money(Int32.Parse(fileText[2]));
+                    DataBank.set_hydrogen(Int32.Parse(fileText[3]));
+                    DataBank.set_sulfur(Int32.Parse(fileText[4]));
+                    DataBank.set_helium(Int32.Parse(fileText[5]));
+                    DataBank.set_boron(Int32.Parse(fileText[6]));
+                    DataBank.set_carbon(Int32.Parse(fileText[7]));
+                    DataBank.set_nitrogen(Int32.Parse(fileText[8]));
+                    DataBank.set_oxygen(Int32.Parse(fileText[9]));
+                    DataBank.set_chlorine(Int32.Parse(fileText[10]));
+                    DataBank.set_hydrogen_sulfide(Int32.Parse(fileText[11]));
+                    DataBank.set_hel_hel_hel(Int32.Parse(fileText[12]));
+                    DataBank.set_helium_hydrogen(Int32.Parse(fileText[13]));
+                    DataBank.set_carbid_bora(Int32.Parse(fileText[14]));
+                    DataBank.set_nitrogen_boron(Int32.Parse(fileText[15]));
+                    DataBank.set_oksid_azota(Int32.Parse(fileText[16]));
+                    DataBank.set_dioksid_hlora(Int32.Parse(fileText[17]));
+                    DataBank.set_trihlorid_azota(Int32.Parse(fileText[18]));
                 }
                 while (false);
                 Load_Save_button.BackColor = Color.LightGoldenrodYellow;
